@@ -1,17 +1,15 @@
-/* Estils personalitzats per a la pàgina d'esdeveniments */
-#map {
-    height: 300px;
-    margin-top: 20px;
+body {
+    font-family: Arial, sans-serif;
 }
 
-.card-title {
-    font-weight: bold;
+#events-list .card {
+    margin-bottom: 20px;
 }
 
-.modal-title {
-    font-size: 1.5rem;
-}
-
-#filter-name, #filter-date, #filter-category {
-    margin-bottom: 15px;
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

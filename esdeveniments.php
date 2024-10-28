@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esdeveniments</title>
+    <title>Gestor d'Esdeveniments</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Leaflet CSS -->
@@ -12,75 +12,41 @@
     <link rel="stylesheet" href="esdeveniments.css">
 </head>
 <body>
+
+    <!-- Política de cookies -->
+    <div id="cookie-policy" class="alert alert-warning" role="alert">
+        Aquesta pàgina fa servir cookies per millorar la teva experiència. 
+        <button id="accept-cookies" class="btn btn-primary">Accepta</button>
+    </div>
+
     <div class="container mt-5">
-        <h1 class="mb-4">Esdeveniments</h1>
+        <h1 class="mb-4">Benvingut al Gestor d'Esdeveniments</h1>
+        <p>Consulta i filtra esdeveniments pròxims!</p>
 
         <!-- Filtres -->
         <div class="row mb-4">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <input type="text" id="filter-name" class="form-control" placeholder="Filtrar per nom">
             </div>
             <div class="col-md-3">
-                <input type="date" id="filter-date" class="form-control">
+                <input type="date" id="filter-start-date" class="form-control" placeholder="Data d'inici">
             </div>
             <div class="col-md-3">
+                <input type="date" id="filter-end-date" class="form-control" placeholder="Data final">
+            </div>
+            <div class="col-md-2">
                 <select id="filter-category" class="form-control">
                     <option value="">Totes les categories</option>
-                    <option value="Interior">Interior</option>
                     <option value="Aire lliure">Aire lliure</option>
+                    <option value="Interior">Interior</option>
                     <option value="Xerrada">Xerrada</option>
-                    <option value="Jornada">Jornada</option>
                 </select>
-            </div>
-            <div class="col-md-3">
-                <button class="btn btn-primary" onclick="filterEvents()">Aplicar filtres</button>
             </div>
         </div>
 
         <!-- Llistat d'esdeveniments -->
         <div id="events-list" class="row">
-            <?php
-            // Exemple de llistat d'esdeveniments
-            $events = [
-                [
-                    'title' => "Caminada 'Correcull' 2024",
-                    'description' => "Una caminada per descobrir els paratges naturals.",
-                    'date' => "2024-11-15",
-                    'time' => "10:00",
-                    'category' => "Aire lliure",
-                    'rating' => 4.5,
-                    'lat' => 41.3851,
-                    'lon' => 2.1734,
-                    'comments' => ["Molt bon esdeveniment!", "Perfecte per als amants de la natura."],
-                ],
-                [
-                    'title' => "Xerrada sobre sostenibilitat",
-                    'description' => "Una xerrada sobre com aplicar principis sostenibles en el dia a dia.",
-                    'date' => "2024-12-01",
-                    'time' => "18:00",
-                    'category' => "Xerrada",
-                    'rating' => 4.0,
-                    'lat' => 41.3888,
-                    'lon' => 2.159,
-                    'comments' => ["Informativa i inspiradora.", "Molt interessant."]
-                ]
-            ];
-
-            // Genera el llistat d'esdeveniments
-            foreach ($events as $index => $event) {
-                echo "
-                <div class='col-md-6 mb-4'>
-                    <div class='card'>
-                        <div class='card-body'>
-                            <h5 class='card-title'>{$event['title']}</h5>
-                            <p class='card-text'>{$event['description']}</p>
-                            <p><strong>Data:</strong> {$event['date']} | <strong>Categoria:</strong> {$event['category']}</p>
-                            <button class='btn btn-primary' onclick='showEventDetails({$index})'>Veure detalls</button>
-                        </div>
-                    </div>
-                </div>";
-            }
-            ?>
+            <!-- Es carregaran els esdeveniments aquí via AJAX -->
         </div>
 
         <!-- Modal per veure detalls de l'esdeveniment -->
@@ -98,8 +64,8 @@
                         <p id="event-description"></p>
                         <p><strong>Data:</strong> <span id="event-date"></span></p>
                         <p><strong>Hora:</strong> <span id="event-time"></span></p>
-                        <p><strong>Valoració:</strong> <span id="event-rating"></span> estrelles</p>
-                        <div id="map"></div>
+                        <p><strong>Categoria:</strong> <span id="event-category"></span></p>
+                        <div id="map" style="height: 300px;"></div>
                         <p><strong>Comentaris:</strong></p>
                         <ul id="event-comments"></ul>
                     </div>
@@ -108,13 +74,10 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS, jQuery, and Leaflet JS -->
+    <!-- jQuery, Bootstrap JS, Leaflet JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
-    <!-- Custom JS -->
     <script src="esdeveniments.js"></script>
 </body>
 </html>
