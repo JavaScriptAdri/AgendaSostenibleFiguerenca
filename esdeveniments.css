@@ -1,0 +1,17 @@
+/* Estils personalitzats per a la pàgina d'esdeveniments */
+#map {
+    height: 300px;
+    margin-top: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+}
+
+#filter-name, #filter-date, #filter-category {
+    margin-bottom: 15px;
+}
