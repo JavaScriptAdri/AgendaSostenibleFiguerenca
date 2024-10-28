@@ -18,10 +18,10 @@
                 <button onclick="Ocult_registre()">X</button>
             </div>
             <h3>Inici de sesio</h3>
-            <label for=""></label>
-            <input type="text">
-            <label for=""></label>
-            <input type="text">
+            <label for="Usuari">Usuari:</label>
+            <input class="Usuari" id="Usuari" name="Usuari" type="text">
+            <label for="Contrasenya">Contrasenya:</label>
+            <input class="Contrasenya" id="Contrasenya" name="Contrasenya" type="text">
             
             <div class="button-center">
                 <button onclick="">Accedeix</button>
@@ -65,20 +65,7 @@
     <div class="Titul_principal">
     <h1 title="Titul principal">Agenda Sostenible Figuerenca</h1>
     </div>
-    <script>
-    function Iniciar_ocult() {
-        document.getElementById('Iniciar-ocult').style.display = 'flex';
-        document.getElementById('Registrar-ocult').style.display = 'none';
-    }
-    function Registrar_ocult() {
-        document.getElementById('Registrar-ocult').style.display = 'flex';
-        document.getElementById('Iniciar-ocult').style.display = 'none';
-    }
-    function Ocult_registre() {
-        document.getElementById('Registrar-ocult').style.display = 'none';
-        document.getElementById('Iniciar-ocult').style.display = 'none';
-    }
-    </script>
+    <script src="Index.js"></script>
 </body>
 </html>
 
