@@ -28,7 +28,7 @@ $(document).ready(function() {
     // Aplica els filtres quan es fa clic al botó
     $('#apply_filters').click(function() {
         const filters = {
-            date_start: $('#date_start').val(),
+            date_start: $('#date_start').val(),     
             date_end: $('#date_end').val(),
             event_name: $('#event_name').val(),
             category: $('#category').val()

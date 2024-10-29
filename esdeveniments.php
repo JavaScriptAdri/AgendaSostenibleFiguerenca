@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -9,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    
 </head>
 <body>
     <header>
@@ -17,6 +19,7 @@
     </header>
 
     <main>
+        
         
         <section id="filters">
             <h2>Filtres</h2>
