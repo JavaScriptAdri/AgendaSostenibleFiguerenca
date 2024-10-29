@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../../public/css/estilsDelIndex.css">
-    <link rel="icon" href="../../public/imatges/IconaP2.png" type="image/png">
+    <link rel="stylesheet" href="css/estilsDelIndex.css">
+    <link rel="icon" href="imatges/IconaP2.png" type="image/png">
 </head>
 <body>
         <div id="Iniciar-ocult" class="Iniciar-ocult">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div>
-            <img src="../../public/imatges/IconaP2.png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
+            <img src="imatges/IconaP2.png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
             <a href="index.php"><button title="Home" class="Home">Home</button></a>
             <a href=""><button title="Anuncis" class="Anuncis">Anuncis</button></a>
             <a href=""><button title="Consells" class="Consells">Consells</button></a>
@@ -56,6 +56,6 @@
         <div class="Titul_principal">
             <h1 title="Titol principal">Agenda Sostenible Figuerenca</h1>
         </div>
-    <script src="../../public/js/Index.js"></script>
+    <script src="js/Index.js"></script>
 </body>
 </html>
