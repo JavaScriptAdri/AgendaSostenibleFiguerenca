@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panell d'Administració - Hacker Style</title>
-    <link rel="stylesheet" href="admin_panel.css">
+    <link rel="stylesheet" href="/public/css/admin_panel.css">
 </head>
 <body>
     <div class="admin-container">
         <!-- Barra lateral de navegació -->
         <nav class="sidebar">
             <div class="logo">
-                <img src="images/hacker.jpg" alt="Logo" class="hacker-logo">
+                <img src="../../public/imatges/hacker.jpg" alt="Logo" class="hacker-logo">
                 <h2 class="admin-title">Admin Panel</h2>
             </div>
             <ul>
@@ -80,6 +80,6 @@
         </main>
     </div>
 
-    <script src="admin_panel.js"></script>
+    <script src="/public/js/admin_panel.js"></script>
 </body>
 </html>

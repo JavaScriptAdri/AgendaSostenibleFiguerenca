@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consells de Sostenibilitat</title>
-    <link rel="stylesheet" href="consells.css">
+    <link rel="stylesheet" href="public/css/consells.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.10/marked.min.js"></script>
 </head>
 <body>
@@ -43,6 +43,6 @@
         <p>&copy; 2024 Consells de Sostenibilitat</p>
     </footer>
 
-    <script src="consells.js"></script>
+    <script src="public/js/consells.js"></script>
 </body>
 </html>
