@@ -1,30 +1,20 @@
 $(document).ready(function() {
-    // Carrega esdeveniments al carregar la pàgina
-    loadEvents();
+    // Inicia el mapa Leaflet
+    const map = L.map('mapid').setView([41.3851, 2.1734], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
 
-    // Filtrar esdeveniments
-    $('#filter-name, #filter-start-date, #filter-end-date, #filter-category').on('input change', function() {
-        loadEvents();
+  
+
+    // Aplica els filtres quan es fa clic al botó
+    $('#apply_filters').click(function() {
+        const filters = {
+            date_start: $('#date_start').val(),     
+            date_end: $('#date_end').val(),
+            event_name: $('#event_name').val(),
+            category: $('#category').val()
+        };
+        carregarEsdeveniments(filters);
     });
 });
-
-function loadEvents() {
-    const name = $('#filter-name').val();
-    const startDate = $('#filter-start-date').val();
-    const endDate = $('#filter-end-date').val();
-    const category = $('#filter-category').val();
-
-    $.ajax({
-        url: 'get_esdeveniments.php',
-        type: 'GET',
-        data: {
-            name: name,
-            start_date: startDate,
-            end_date: endDate,
-            category: category
-        },
-        success: function(response) {
-            $('#events-list').html(response);
-        }
-    });
-}

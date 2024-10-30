@@ -16,7 +16,6 @@ body {
     overflow-y: auto; /* Permet el desplaçament vertical */
 }
 
-
 /* Efecte de fons animat */
 body::before {
     content: "";
@@ -49,7 +48,6 @@ header {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 header h1 {
     font-size: 2.5rem;
@@ -137,20 +135,20 @@ main {
     transform: scale(1.05); /* Augmenta lleugerament */
 }
 
-/* Llistat d'Esdeveniments */
-#events_list h2 {
+/* Llistat d'Anuncis */
+#announcements_list h2 {
     font-size: 1.8rem;
     color: #333;
     margin-bottom: 1em;
 }
 
-#events_container {
+#announcements_container {
     display: grid;
     gap: 1.5em;
 }
 
-/* Targetes d'Esdeveniments */
-.event-card {
+/* Targetes d'Anuncis */
+.announcement-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -172,14 +170,14 @@ main {
     }
 }
 
-.event-card:hover {
+.announcement-card:hover {
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background-color: #f0faf0;
 }
 
 /* Efecte per a una lleugera animació a l'hover */
-.event-card::before {
+.announcement-card::before {
     content: "";
     position: absolute;
     top: -50%;
@@ -192,70 +190,43 @@ main {
     z-index: 1;
 }
 
-.event-card:hover::before {
+.announcement-card:hover::before {
     transform: rotate(0deg);
     top: 0;
     left: 0;
 }
 
 /* Ajust de text dins de la targeta */
-.event-card h3,
-.event-card p,
-.event-card .event-details {
+.announcement-card h3,
+.announcement-card p,
+.announcement-card .announcement-details {
     position: relative;
     z-index: 2;
 }
 
 /* Animació de desplaçament de text */
-.event-card h3 {
+.announcement-card h3 {
     font-size: 1.5rem;
     color: #4CAF50;
     margin-bottom: 0.5em;
     transition: transform 0.3s ease;
 }
 
-.event-card:hover h3 {
+.announcement-card:hover h3 {
     transform: translateY(-3px);
 }
 
-.event-card p,
-.event-card .event-details {
+.announcement-card p,
+.announcement-card .announcement-details {
     font-size: 1rem;
     color: #666;
     transition: color 0.3s ease, transform 0.3s ease; /* Animació de color i desplaçament */
 }
 
-.event-card:hover p,
-.event-card:hover .event-details {
+.announcement-card:hover p,
+.announcement-card:hover .announcement-details {
     color: #333;
     transform: translateY(3px); /* Desplaçament cap avall */
-}
-
-/* Mapa Leaflet */
-#map {
-    margin-top: 2em;
-}
-
-#mapid {
-    height: 400px;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Animació de moviment al mapa */
-#mapid {
-    animation: mapWave 10s ease-in-out infinite; /* Animació de moviment */
-}
-
-@keyframes mapWave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px); /* Moviment cap amunt */
-    }
 }
 
 /* Footer */
@@ -295,7 +266,7 @@ footer p {
     bottom: 0;
     width: 100%;
     background: rgba(51, 51, 51, 0.9); /* Fons translúcid */
-    color: #fff;
+    color: #fff;    
     text-align: center;
     padding: 1em;
     z-index: 1000;
@@ -309,7 +280,7 @@ footer p {
     }
     to {
         transform: translateY(0);
-}
+    }
 }
 
 /* Botó de tancament */
@@ -324,5 +295,5 @@ footer p {
 }
 
 #cookie-notice button:hover {
-    color: #fff;
+    color: #45a049; /* Canvi de color a l'hover */
 }
