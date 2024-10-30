@@ -43,6 +43,6 @@
         <p>&copy; 2024 Consells de Sostenibilitat</p>
     </footer>
 
-    <script src="public/js/consells.js"></script>
+    <script src="../../public/js/consells.js"></script>
 </body>
 </html>

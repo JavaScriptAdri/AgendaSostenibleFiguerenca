@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gestor d’esdeveniments sostenibles amb filtres avançats i geolocalització.">
     <title>Gestor d'Esdeveniments</title>
-    <link rel="stylesheet" href="public/css/esdeveniments.css">
+    <link rel="stylesheet" href="../../public/css/esdeveniments.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
