@@ -24,7 +24,7 @@ if (!isset($_SESSION['usuari'])) {
         <a href="php/tancarSesio.php"><button title="Tancar sessió">Tancar sessió</button></a>
     </div>
     
-    <!-- Altres continguts del perfil -->
+    <!--- Altres continguts del perfil --->
 
 </body>
 </html>
