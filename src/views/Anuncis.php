@@ -60,7 +60,7 @@ include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per d
        </div>
 
         <div class="Titul_principal">
-            <h1 title="Titol principal">Agenda Sostenible Figuerenca</h1>
+            <h1 title="Titol principal">Anuncis</h1>
         </div>
     <script>
       // Assigna el nom de l'usuari a una variable JavaScript
