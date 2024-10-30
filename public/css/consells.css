@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+#add-consell {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+}
+
+#add-consell h2 {
+    margin-top: 0;
+}
+
+#add-consell label {
+    display: block;
+    margin: 8px 0 4px;
+}
+
+#add-consell input,
+#add-consell textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#add-consell button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add-consell button:hover {
+    background-color: #45a049;
+}
+
+#consells-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.consell {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.consell h2 {
+    margin-top: 0;
+}
+
+.consell .descripcio {
+    font-style: italic;
+    color: #555;
+}
+
+.consell .text {
+    margin-top: 10px;
+}
+
+.consell .etiquetes {
+    margin-top: 15px;
+    color: #4CAF50;
+    font-size: 0.9em;
+}
