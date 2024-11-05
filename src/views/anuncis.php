@@ -57,7 +57,8 @@ include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per d
             <img src="imatges/IconaP2.png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
             <a href="index.php"><button title="Home" class="Home">Home</button></a>
             <a href="index.php?r=anuncis"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
-            <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a>            
+            <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a> 
+            <a href="index.php?r=esdeveniments"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a>           
        </div>
 
         <div class="Titul_principal">
