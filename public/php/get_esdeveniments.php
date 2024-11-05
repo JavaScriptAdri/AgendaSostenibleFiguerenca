@@ -1,20 +1,47 @@
 <?php
-// Aquesta és una simulació de dades
-$esdeveniments = [
-    [
-        "id" => 1,
-        "titol" => "Caminada per la Natura",
-        "categoria" => "Exterior",
-        "descripcio" => "Una caminada per gaudir de la natura.",
-        "data_inici" => "2024-11-10",
-        "data_final" => "2024-11-10",
-        "latitud" => 41.3879,
-        "longitud" => 2.16992,
-        "imatge" => "caminada.jpg"
-    ],
-    // Més esdeveniments...
-];
+// Connexió a la base de dades
+include 'db_connection.php';
 
-header('Content-Type: application/json');
-echo json_encode($esdeveniments);
+// Filtres
+$name = $_GET['name'] ?? '';
+$startDate = $_GET['start_date'] ?? '';
+$endDate = $_GET['end_date'] ?? '';
+$category = $_GET['category'] ?? '';
+
+// Consulta SQL amb filtres
+$query = "SELECT * FROM events WHERE 1";
+
+if (!empty($name)) {
+    $query .= " AND title LIKE '%$name%'";
+}
+if (!empty($startDate)) {
+    $query .= " AND date >= '$startDate'";
+}
+if (!empty($endDate)) {
+    $query .= " AND date <= '$endDate'";
+}
+if (!empty($category)) {
+    $query .= " AND category = '$category'";
+}
+
+$result = mysqli_query($conn, $query);
+
+// Generar la sortida HTML
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "
+    <div class='col-md-4'>
+        <div class='card'>
+            <img src='images/{$row['image']}' class='card-img-top' alt='{$row['title']}'>
+            <div class='card-body'>
+                <h5 class='card-title'>{$row['title']}</h5>
+                <p class='card-text'>{$row['description']}</p>
+                <p><strong>Data:</strong> {$row['date']}</p>
+                <p><strong>Categoria:</strong> {$row['category']}</p>
+                <a href='event.php?id={$row['id']}' class='btn btn-primary'>Veure més</a>
+            </div>
+        </div>
+    </div>";
+}
+
+mysqli_close($conn);
 ?>
