@@ -2,7 +2,8 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
+include 'cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
+include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dades
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -11,9 +12,8 @@ include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per d
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gestor d’esdeveniments sostenibles amb filtres avançats i geolocalització.">
     <title>Gestor d'Esdeveniments</title>
-    <link rel="stylesheet" href="css/esdeveniments.css">
-    <link rel="stylesheet" href="css/anuncis.css">
-    <link rel="stylesheet" href="css/estilsDelIndex.css">
+    <link rel="stylesheet" href="/public/css/esdeveniments.css">
+    <link rel="stylesheet" href="/public/css/estilsDelIndex.css">
     <link rel="icon" href="imatges/IconaP2.png" type="image/png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -124,7 +124,6 @@ include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per d
       // Assigna el nom de l'usuari a una variable JavaScript
       var usuari = <?php echo isset($_SESSION['usuari']) ? json_encode($_SESSION['usuari']) : 'null'; ?>;
     </script>
-    <script src="js/Index.js"></script>
-    <script src="js/esdeveniments.js"></script>
+    <script src="/public/js/esdeveniments.js"></script>
 </body>
 </html>

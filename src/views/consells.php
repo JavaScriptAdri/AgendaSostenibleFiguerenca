@@ -2,7 +2,8 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
+include 'cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
+include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dades
 ?>
 <!DOCTYPE html>
 <html lang="es">
