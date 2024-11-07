@@ -1,8 +1,7 @@
 <?php
 // Inclou connexió a la base de dades i funcions
-
-
-
+include 'cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
+include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dades
 
 ?>
 <!DOCTYPE html>
