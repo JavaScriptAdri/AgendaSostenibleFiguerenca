@@ -10,8 +10,7 @@ include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/anuncis.css">
+    <title>Consells</title>
     <link rel="stylesheet" href="css/estilsDelIndex.css">
     <link rel="icon" href="imatges/IconaP2.png" type="image/png">
 </head>
@@ -22,17 +21,12 @@ include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
             <a href="index.php?r=anuncis"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
             <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a> 
             <a href="index.php?r=esdeveniments"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a> 
-            <a href="login.php"><button title="Iniciar sessió" class="Iniciar sessió"> Iniciar sessió</button></a>
-            <a href="register.php"><button title="Registrar-se" class="Registrar">Registrar-se</button></a>           
+            <a href="index.php?r=login"><button title="Iniciar sessió" class="Iniciar sessió"> Iniciar sessió</button></a>
+            <a href="index.php?r=register"><button title="Registrar-se" class="Registrar">Registrar-se</button></a>        
        </div>
 
         <div class="Titul_principal">
-            <h1 title="Titol principal">Agenda Sostenible Figuerenca</h1>
-        </div>
-        <div class="llistatEsdeveniments">
-            <ul>
-                <?php include 'php/llistatEsdeveniments.php';?>
-            </ul>
+            <h1 title="Titol principal">Consells</h1>
         </div>
     <script>
       // Assigna el nom de l'usuari a una variable JavaScript

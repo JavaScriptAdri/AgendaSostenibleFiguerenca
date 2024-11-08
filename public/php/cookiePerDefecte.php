@@ -1,9 +1,15 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+// Nom i valor per defecte de la cookie
+$cookieName = "usuari_defecte";
+$cookieValue = "visitant";
+$cookieExpiration = time() + (365 * 24 * 60 * 60); // 1 any
+
+// Comprova si la cookie ja està configurada
+if (!isset($_COOKIE[$cookieName])) {
+    // Si la cookie no existeix, crea-la amb els valors per defecte
+    setcookie($cookieName, $cookieValue, $cookieExpiration, "/"); // '/' fa que la cookie sigui accessible a tot el lloc
 }
-// Si no hi ha un usuari registrat, crea la cookie per defecte
-if (!isset($_SESSION['usuari'])) {
-    setcookie('usuari_registrat', 'false', time() + (86400 * 30), "/"); // Cookie per defecte
-}
+
+// Opcional: assigna el valor de la cookie a una variable per utilitzar-lo
+$usuariDefecte = $_COOKIE[$cookieName] ?? $cookieValue;
 ?>

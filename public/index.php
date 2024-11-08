@@ -11,6 +11,8 @@
  include "../src/controllers/ctrlConsells.php";
  include "../src/controllers/ctrlAnuncis.php";
  include "../src/controllers/ctrlEsdeveniments.php";
+ include "../src/controllers/ctrlLogin.php";
+ include "../src/controllers/ctrlRegister.php";
  
 
 /**
@@ -49,6 +51,10 @@
   $response = ctrlAnuncis($request, $response, $container);
 } elseif($r == "esdeveniments") {
   $response = ctrlEsdeveniments($request, $response, $container);
+}elseif($r == "login") {
+  $response = ctrlLogin($request, $response, $container);
+}elseif($r == "register") {
+  $response = ctrlRegister($request, $response, $container);
 } else {
   echo "No existeix la ruta";
 }

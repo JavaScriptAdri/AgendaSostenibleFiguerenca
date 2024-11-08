@@ -11,7 +11,6 @@
  */
 function example($request, $response, $container, $next){
     
-    $response->set('exemple');
     // Aquí va el codi del middleware
     $response = $next($request, $response, $container);
 

@@ -1,5 +1,5 @@
 <?php
 function ctrlConsells($request, $response, $container) {
-    $response->setTemplate("consells.php");
+    $response->setTemplate("Consells.php");
     return $response;
 }
