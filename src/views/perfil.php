@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuari_id'])) {
 }
 
 // Connexió a la base de dades
-$mysqli = new mysqli("localhost", "usuari", "contrasenya", "esdeveniments_db");
+$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
 $id = $_SESSION['usuari_id'];
 
 $stmt = $mysqli->prepare("SELECT nom, cognoms, email, imatge_perfil FROM usuaris WHERE id = ?");

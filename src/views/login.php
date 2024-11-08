@@ -1,6 +1,6 @@
 <?php
 // Connexió a la base de dades
-$mysqli = new mysqli("localhost", "usuari", "contrasenya", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom_dusuari = $_POST['nom_dusuari'];
