@@ -1,5 +1,5 @@
 <?php
 function ctrlAnuncis($request, $response, $container) {
-    $response->setTemplate("anuncis.php");
+    $response->setTemplate("Anuncis.php");
     return $response;
 }

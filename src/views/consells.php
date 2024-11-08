@@ -2,16 +2,14 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-include 'cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
-include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dades
+include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consells</title>
-    <link rel="stylesheet" href="css/anuncis.css">
+    <title>Home</title>
     <link rel="stylesheet" href="css/estilsDelIndex.css">
     <link rel="icon" href="imatges/IconaP2.png" type="image/png">
 </head>
@@ -57,13 +55,10 @@ include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dade
         <div class="top_llegenda">
             <img src="imatges/IconaP2.png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
             <a href="index.php"><button title="Home" class="Home">Home</button></a>
-            <a href="/src/views/anuncis.php"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
-            <a href="/src/views/consells.php"><button title="Consells" class="Consells">Consells</button></a>  
-            <a href="/src/views/esdeveniments.php"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a>      
-            <a href="login.php">Iniciar sessió</a>
-            <a href="register.php">Registrar-se</a>
-    
+            <a href="index.php?r=anuncis"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
+            <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a>            
        </div>
+
         <div class="Titul_principal">
             <h1 title="Titol principal">Consells</h1>
         </div>

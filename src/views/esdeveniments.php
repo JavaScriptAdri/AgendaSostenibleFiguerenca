@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 include 'cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
-include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dades
+include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -62,9 +62,9 @@ include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dade
         <div class="top_llegenda">
             <img src="imatges/IconaP2.png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
             <a href="index.php"><button title="Home" class="Home">Home</button></a>
-            <a href="/src/views/anuncis.php"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
-            <a href="/src/views/consells.php"><button title="Consells" class="Consells">Consells</button></a>  
-            <a href="/src/views/esdeveniments.php"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a>  
+            <a href="index.php?r=anuncis"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
+            <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a> 
+            <a href="index.php?r=esdeveniments"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a>           
             <a href="/src/views/login.php">Iniciar sessió</a>
             <a href="/src/views/register.php">Registrar-se</a>
         
