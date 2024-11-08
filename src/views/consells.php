@@ -57,11 +57,13 @@ include '../../connexio.php'; // Inclou el fitxer de connexió a la base de dade
         <div class="top_llegenda">
             <img src="imatges/IconaP2.png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
             <a href="index.php"><button title="Home" class="Home">Home</button></a>
-            <a href="index.php?r=anuncis"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
-            <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a> 
-            <a href="index.php?r=esdeveniments"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a>           
+            <a href="/src/views/anuncis.php"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
+            <a href="/src/views/consells.php"><button title="Consells" class="Consells">Consells</button></a>  
+            <a href="/src/views/esdeveniments.php"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a>      
+            <a href="login.php">Iniciar sessió</a>
+            <a href="register.php">Registrar-se</a>
+    
        </div>
-
         <div class="Titul_principal">
             <h1 title="Titol principal">Consells</h1>
         </div>
