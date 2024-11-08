@@ -126,7 +126,7 @@
     width: 80px;
     height: auto;
     margin-right: 15px;
-    flex-shrink: 0; /* Manté la mida de la imatge sense contraure's */
+    float: left;
 }
 
 .EsdevenimentInfo {

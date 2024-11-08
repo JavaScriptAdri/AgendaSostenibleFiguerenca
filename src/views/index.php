@@ -21,13 +21,13 @@ include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per d
                     <button onclick="Ocult_registre()">X</button>
                 </div>
                 <h3>Inici de sesio</h3>
-                <form action="php/GuardarIniciSesioUsuari.php" method="POST">
+                <form action="../src/views/login.php" method="POST">
                     <label for="UsuariR">Usuari:</label>
                     <input id="UsuariR" name="UsuariR" type="text" required placeholder="Usuari">
                     <label for="ContrasenyaR">Contrasenya:</label>
                     <input id="ContrasenyaR" name="ContrasenyaR" type="password" required placeholder="Contrasenya">
                 <div class="button-center">
-                    <button onclick="LoginUsuaris()" title="Accedeix">Accedeix</button>
+                    <button title="Accedeix" type="submit">Accedeix</button>
                 </form>
                     <label>No tens un comte?<button onclick="Registrar_ocult()">Registrat!</button></label>
                 </div>
