@@ -31,3 +31,47 @@
     text-align: center;
     width: 300px;
   }
+.Esdeveniment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #00ff6255;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.Esdeveniment img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    flex-shrink: 0; /* Manté la mida de la imatge sense contraure's */
+}
+
+.EsdevenimentInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el text a l'esquerra */
+    justify-content: center; /* Centra el text verticalment amb la imatge */
+}
+
+.Titol {
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.Descripcio {
+    margin: 5px 0 10px;
+    color: #555;
+}
+
+
+.EsdevenimentsSaverMes {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.EsdevenimentsSaverMes:hover {
+    text-decoration: underline;
+}
