@@ -1,0 +1,167 @@
+/* Reset de márgenes y paddings para una base limpia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo oscuro y gradientes */
+body {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal más grande y sutil */
+.profile-container {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;  /* Aumentado para bordes más redondeados */
+    padding: 60px 70px;   /* Aumentado el padding */
+    width: 500px;         /* Ancho mayor */
+    max-width: 90%;       /* Para evitar desbordes en pantallas pequeñas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación suave al pasar el ratón */
+.profile-container:hover {
+    transform: translateY(-5px); /* Movimiento más suave */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    opacity: 0.95;
+}
+
+/* Título de la página */
+h1 {
+    text-align: center;
+    font-size: 2.8rem;  /* Aumentado tamaño de fuente */
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.8), 0 0 20px rgba(0, 234, 255, 0.7);
+}
+
+/* Estilo para la imagen de perfil */
+.profile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* Más espacio entre imagen y formulario */
+}
+
+.profile-img {
+    width: 140px;   /* Aumentado tamaño de la imagen */
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid #00eaff;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+/* Contenedor del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Más espacio entre los campos */
+}
+
+/* Estilo para las etiquetas */
+label {
+    font-size: 1.1rem;  /* Aumentado tamaño de fuente */
+    font-weight: 500;
+    color: #ccc;
+}
+
+/* Estilo para los inputs */
+input[type="file"] {
+    background: transparent;
+    border: 2px solid #00eaff;
+    padding: 12px;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #00eaff;  /* Tono verde al pasar el ratón */
+}
+
+input[type="file"]:focus {
+    outline: none;
+    border-color: #00eaff;
+}
+
+/* Botones */
+.submit-btn, .edit-btn {
+    background: linear-gradient(145deg, #4caf50, #45a049); /* Tono verde sostenible */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 234, 255, 0.6);
+}
+
+.submit-btn:hover, .edit-btn:hover {
+    background: linear-gradient(145deg, #45a049, #4caf50);
+    transform: scale(1.05);
+}
+
+.submit-btn:active, .edit-btn:active {
+    transform: scale(0.95);
+}
+
+/* Estilo de las imágenes previas */
+.current-avatar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.current-avatar h2 {
+    font-size: 1.6rem;
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+/* Efecto de enfoque para los inputs */
+input[type="file"] {
+    animation: pulse 2s infinite;
+}
+
+/* Animación de enfoque */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 234, 255, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 234, 255, 0.9);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 234, 255, 0.7);
+    }
+}
+
+/* Sombra sutil para los elementos */
+input[type="file"], .submit-btn, .edit-btn {
+    box-shadow: 0 4px 15px rgba(0, 234, 255, 0.6);
+}
+
+input[type="file"]:focus, .submit-btn:hover, .edit-btn:hover {
+    box-shadow: 0 8px 20px rgba(0, 234, 255, 0.9);
+}

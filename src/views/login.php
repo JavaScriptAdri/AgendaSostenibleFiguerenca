@@ -23,8 +23,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<form action="login.php" method="POST">
-    <input type="text" name="nom_dusuari" placeholder="Nom d'usuari" required>
-    <input type="password" name="contrasenya" placeholder="Contrasenya" required>
-    <button type="submit">Iniciar sessió</button>
-</form>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sessió</title>
+    <link rel="stylesheet" href="/public/css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sessió</h2>
+        <form action="login.php" method="POST" class="login-form">
+            <input type="text" name="nom_dusuari" placeholder="Nom d'usuari" required>
+            <input type="password" name="contrasenya" placeholder="Contrasenya" required>
+            <button type="submit">Iniciar Sessió</button>
+        </form>
+    </div>
+</body>
+</html>
