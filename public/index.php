@@ -52,9 +52,9 @@
 } elseif($r == "esdeveniments") {
   $response = ctrlEsdeveniments($request, $response, $container);
 }elseif($r == "login") {
-  $response = ctrlEsdeveniments($request, $response, $container);
+  $response = ctrlLogin($request, $response, $container);
 }elseif($r == "register") {
-  $response = ctrlEsdeveniments($request, $response, $container);
+  $response = ctrlRegister($request, $response, $container);
 } else {
   echo "No existeix la ruta";
 }
