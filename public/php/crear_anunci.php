@@ -1,9 +1,6 @@
 <?php
 // Connexió a la base de dades
-$servername = "localhost"; // Cambia esto si tu servidor MySQL es diferente
-$username = "root"; // Nom d'usuari de la base de dades
-$password = ""; // Contrasenya de la base de dades
-$dbname = "esdeveniments_db"; // Nom de la base de dades
+$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
 
 // Crear connexió
 $conn = new mysqli($servername, $username, $password, $dbname);

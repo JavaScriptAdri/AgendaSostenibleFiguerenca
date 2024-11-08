@@ -9,6 +9,7 @@ try {
     // Afegim el joc de caràcters UTF-8 per a evitar problemes d'encoding
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 } catch (PDOException $e) {
     // Mostrem un missatge d'error més clar
     echo "Error de connexió a la base de dades: " . $e->getMessage();
