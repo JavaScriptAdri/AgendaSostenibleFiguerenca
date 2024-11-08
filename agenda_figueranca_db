@@ -1,6 +1,6 @@
 -- Creació de la base de dades
-CREATE DATABASE esdeveniments_db;
-USE esdeveniments_db;
+CREATE DATABASE agenda_figuerenca_db;
+USE agenda_figuerenca_db;
 
 -- 1. Taula: `usuaris`
 CREATE TABLE usuaris (

@@ -1,13 +1,18 @@
-// Navegació entre seccions
-function showSection(sectionId) {
-    document.querySelectorAll(".admin-section").forEach(section => section.classList.add("hidden"));
-    document.getElementById(sectionId).classList.remove("hidden");
+// Funció de filtratge dels anuncis segons la cerca i la categoria seleccionada
+function filterAnuncios() {
+    let searchInput = document.getElementById('searchInput').value.toLowerCase();
+    let categoryFilter = document.getElementById('categoryFilter').value;
+    let announcements = document.querySelectorAll('.announcement-card');
 
-    document.querySelectorAll(".sidebar ul li").forEach(li => li.classList.remove("active"));
-    document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add("active");
+    announcements.forEach(announcement => {
+        let title = announcement.querySelector('h3').textContent.toLowerCase();
+        let description = announcement.querySelector('p').textContent.toLowerCase();
+        let category = announcement.dataset.category.toLowerCase();
+
+        if (title.includes(searchInput) && (categoryFilter === '' || category === categoryFilter)) {
+            announcement.style.display = 'block';
+        } else {
+            announcement.style.display = 'none';
+        }
+    });
 }
-
-function createEvent() { alert("Funció per crear un nou esdeveniment."); }
-function createUser() { alert("Funció per crear un nou usuari."); }
-function createTip() { alert("Funció per crear un consell sostenible nou."); }
-function createCategory() { alert("Funció per crear una nova categoria."); }

@@ -1,51 +1,56 @@
-// Mostra o amaga les seccions segons la navegació de la barra lateral
+// Funció per mostrar una secció específica
 function showSection(sectionId) {
-    const sections = document.querySelectorAll(".admin-section");
-    sections.forEach(section => {
-        section.classList.add("hidden");
-    });
-    document.getElementById(sectionId).classList.remove("hidden");
-}
-
-function createEvent() {
-    alert("Funció per crear un nou esdeveniment.");
-}
-
-function createUser() {
-    alert("Funció per crear un nou usuari.");
-}
-
-function createTip() {
-    alert("Funció per crear un consell sostenible nou.");
-}
-
-function createCategory() {
-    alert("Funció per crear una nova categoria.");
-}
-
-function createClassified() {
-    alert("Funció per crear un anunci classificat nou.");
-}
-
-function createClassifiedCategory() {
-    alert("Funció per crear una categoria d'anunci classificat nova.");
-}
-// Mostrar la sección seleccionada y ocultar las demás
-function showSection(sectionId) {
-    // Ocultar todas las secciones
-    const sections = document.querySelectorAll('.admin-section');
-    sections.forEach(section => {
+    document.querySelectorAll('.admin-section').forEach(section => {
         section.classList.add('hidden');
     });
+    document.getElementById(sectionId).classList.remove('hidden');
+}
 
-    // Mostrar la sección seleccionada
-    const activeSection = document.getElementById(sectionId);
-    if (activeSection) {
-        activeSection.classList.remove('hidden');
+// Carregar secció inicial
+document.addEventListener('DOMContentLoaded', () => {
+    showSection('dashboard');
+    loadEvents();
+});
+
+// Carrega la llista d'esdeveniments
+async function loadEvents() {
+    try {
+        const response = await fetch('/api/events.php');
+        const events = await response.json();
+        document.getElementById('events-list').innerHTML = events.map(event => 
+            `<div class="event">
+                <h4>${event.titol}</h4>
+                <p>${event.descripcio}</p>
+                <button onclick="editEvent(${event.id})">Edita</button>
+                <button onclick="deleteEvent(${event.id})">Elimina</button>
+            </div>`
+        ).join('');
+    } catch (error) {
+        console.error('Error carregant esdeveniments:', error);
     }
 }
 
-// Mostrar la sección de dashboard al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    showSection('dashboard');
-});
+// Funció per eliminar un esdeveniment
+async function deleteEvent(eventId) {
+    try {
+        await fetch(`/api/events.php?id=${eventId}`, { method: 'DELETE' });
+        loadEvents();
+    } catch (error) {
+        console.error('Error eliminant esdeveniment:', error);
+    }
+}
+
+// Crear esdeveniment nou
+async function createEvent() {
+    const newEvent = { titol: "Nou Esdeveniment", descripcio: "Descripció..." };
+    try {
+        await fetch('/api/events.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newEvent)
+        });
+        loadEvents();
+    } catch (error) {
+        console.error('Error creant esdeveniment:', error);
+    }
+}
