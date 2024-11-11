@@ -1,5 +1,3 @@
-/* CSS per al perfil d'usuari amb estètica sostenible */
-
 /* Estils generals */
 body {
     font-family: Arial, sans-serif;
@@ -14,16 +12,20 @@ body {
     background-color: #388e3c; /* Verd fosc per a la barra de navegació */
     padding: 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Centra els elements horitzontalment a la barra */
+    align-items: center; /* Centra els elements verticalment a la barra */
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%; /* Assegura que la barra ocupi tot l'ample de la pantalla */
+    box-sizing: border-box; /* Assegura que el padding no augmenti l'amplada de la barra */
 }
 
+/* La imatge a la barra */
 .top_llegenda img {
     width: 50px;
     height: auto;
+    margin-right: 10px;
 }
 
 .top_llegenda a {
@@ -35,7 +37,7 @@ body {
     border: 2px solid #388e3c; /* Verd fosc */
     color: #388e3c;
     padding: 10px 15px;
-    margin: 0 10px;
+    margin: 5px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
@@ -45,6 +47,35 @@ body {
 .top_llegenda button:hover {
     background-color: #388e3c;
     color: white;
+}
+
+/* Ajusts per a pantalles petites (mòbils) */
+@media (max-width: 768px) {
+    .top_llegenda {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .top_llegenda img {
+        width: 40px; /* Mida reduïda de la imatge per a mòbils */
+    }
+
+    .top_llegenda button {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin: 2px; /* Espai més petit entre botons */
+    }
+}
+
+@media (max-width: 480px) {
+    .top_llegenda {
+        padding: 8px; /* Reduïm el padding per a pantalles petites */
+    }
+
+    .top_llegenda button {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
 }
 
 /* Estils per al títol i la informació de l'usuari */
@@ -84,4 +115,80 @@ a {
 
 a:hover {
     color: #2e7d32; /* Verd més fosc en passar el cursor */
+}
+
+/* Estils per al botó d'editar */
+.editar {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.editar:hover {
+    background-color: #388e3c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top_llegenda {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .top_llegenda img {
+        margin-bottom: 10px;
+    }
+
+    .top_llegenda button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    img {
+        max-width: 120px;
+    }
+
+    a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    img {
+        max-width: 100px;
+    }
+
+    .editar {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .top_llegenda button {
+        font-size: 12px;
+        padding: 8px;
+    }
 }

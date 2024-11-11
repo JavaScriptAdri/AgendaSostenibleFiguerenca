@@ -9,24 +9,8 @@ if ($mysqli->connect_error) {
     die("Connexió fallida: " . $mysqli->connect_error);
 }
 
-// Verifica si l'usuari està autenticat, si no, comprova el token de la cookie
-if (!isset($_SESSION['usuari_id']) && isset($_COOKIE['auth_token'])) {
-    // Verificar el token de la cookie a la base de dades
-    $stmt = $mysqli->prepare("SELECT id FROM usuaris WHERE token = ?");
-    if ($stmt === false) {
-        die("Error en preparar la consulta: " . $mysqli->error);
-    }
-
-    $stmt->bind_param("s", $_COOKIE['auth_token']);
-    $stmt->execute();
-    $stmt->bind_result($id);
-    if ($stmt->fetch()) {
-        $_SESSION['usuari_id'] = $id;
-    } else {
-        header("Location: login.php");
-        exit();
-    }
-} elseif (!isset($_SESSION['usuari_id'])) {
+// Verifica si l'usuari està autenticat
+if (!isset($_SESSION['usuari_id'])) {
     header("Location: login.php");
     exit();
 }
@@ -34,12 +18,6 @@ if (!isset($_SESSION['usuari_id']) && isset($_COOKIE['auth_token'])) {
 // Recupera les dades de l'usuari
 $id = $_SESSION['usuari_id'];
 $stmt = $mysqli->prepare("SELECT nom, cognoms, email, imatge_perfil FROM usuaris WHERE id = ?");
-
-// Comprova si la preparació de la consulta ha fallat
-if ($stmt === false) {
-    die("Error en preparar la consulta: " . $mysqli->error);
-}
-
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $stmt->bind_result($nom, $cognoms, $email, $imatge_perfil);
@@ -56,20 +34,35 @@ $stmt->close();
     <link rel="stylesheet" href="../..//public/css/perfil.css">
 </head>
 <body>
+    <!-- Llegenda superior -->
     <div class="top_llegenda">
         <img src="/public/imatges/agenda figuerenca no bg (1).png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
         <a href="index.php"><button title="Home" class="Home">Home</button></a>
         <a href="index.php?r=anuncis"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
         <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a> 
         <a href="index.php?r=esdeveniments"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a> 
-        <a href="index.php?r=login"><button title="Iniciar sessió" class="Iniciar sessió"> Iniciar sessió</button></a>
+        <a href="index.php?r=login"><button title="Iniciar sessió" class="Iniciar sessió">Iniciar sessió</button></a>
         <a href="index.php?r=register"><button title="Registrar-se" class="Registrar">Registrar-se</button></a>           
     </div>
 
+    <!-- Contingut del perfil de l'usuari -->
     <h1>Benvingut/da, <?php echo htmlspecialchars($nom); ?>!</h1>
     <p>Nom complet: <?php echo htmlspecialchars($nom . " " . $cognoms); ?></p>
     <p>Email: <?php echo htmlspecialchars($email); ?></p>
-    <img src="<?php echo htmlspecialchars($imatge_perfil); ?>" alt="Imatge de perfil">
+    
+
+    <?php
+    if ($imatge_perfil) {
+        // Ruta correcta per mostrar la imatge
+        echo '<img src="/uploads/' . htmlspecialchars($imatge_perfil) . '" alt="Imatge de perfil" width="150">';
+    } else {
+        echo "No tens una imatge de perfil establerta.";
+    }
+    ?>
+    <br>
+    <a href="editar_perfil.php">Edita el teu perfil</a> <!-- Redirigeix a la pàgina d'editar perfil -->
+    
+    <br><br>
     <a href="/src/views/logout.php">Tancar sessió</a>
 </body>
 </html>
