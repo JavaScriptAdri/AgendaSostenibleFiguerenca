@@ -106,11 +106,26 @@ if (isset($_POST['nom']) || isset($_POST['cognoms']) || isset($_POST['email'])) 
     <title>Editar Perfil</title>
 </head>
 <body>
- 
-    <form action="editar_perfil.php" method="POST" enctype="multipart/form-data">
-        <label for="nom">Nom:</label>
-        <input type="text" name="nom" id="nom" value="<?php echo htmlspecialchars($nom); ?>" required>
-        <br>
+    <div class="top_llegenda">
+            <img src="imatges/IconaP2.png" alt="Agenda Sostenible Figuerenca" title="Agenda Sostenible Figuerenca">
+            <a href="index.php"><button title="Home" class="Home">Home</button></a>
+            <a href="index.php?r=anuncis"><button title="Anuncis" class="Anuncis">Anuncis</button></a>
+            <a href="index.php?r=consells"><button title="Consells" class="Consells">Consells</button></a> 
+            <a href="index.php?r=esdeveniments"><button title="Buscador Esdeveniments" class="EsdevenimentsBuscador">Buscador esdeveniments</button></a> 
+            <a href="index.php?r=login"><button title="Iniciar sessió" class="Iniciar sessió"> Iniciar sessió</button></a>
+            <a href="index.php?r=register"><button title="Registrar-se" class="Registrar">Registrar-se</button></a>           
+    </div>
+    <div class="profile-container">
+        <h1>Editar perfil</h1>
+        <form action="editar_perfil.php" method="POST" enctype="multipart/form-data">
+            <div class="profile-image">
+                <img src="<?php echo htmlspecialchars($imatge_perfil); ?>" alt="Imatge de perfil">
+                <input type="file" name="imatge_perfil" accept="image/*">
+                <input type="hidden" name="imatge_perfil_actual" value="<?php echo htmlspecialchars($imatge_perfil); ?>">
+            </div>
+            <div class="profile-details">
+                <label for="nom">Nom:</label>
+                <input type="text" name="nom" value="<?php echo htmlspecialchars($nom); ?>" required>
 
         <label for="cognoms">Cognoms:</label>
         <input type="text" name="cognoms" id="cognoms" value="<?php echo htmlspecialchars($cognoms); ?>" required>
