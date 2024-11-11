@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Connexió a la base de dades
-$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.19.0.2", "admin", "admin", "agenda_figuerenca_db");
 
 // Comprova si la connexió ha fallat
 if ($mysqli->connect_error) {
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        </div>
     <div class="login-container">
         <h2>Iniciar Sessió</h2>
-        <form action="login.php" method="POST" class="login-form">
+        <form action="php/controlLogin.php" method="POST" class="login-form">
             <input type="text" name="nom_dusuari" placeholder="Nom d'usuari" required>
             <input type="password" name="contrasenya" placeholder="Contrasenya" required>
             <button type="submit">Iniciar Sessió</button>

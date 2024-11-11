@@ -1,6 +1,6 @@
 <?php
 // Connexió a la base de dades
-$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.19.0.2", "admin", "admin", "agenda_figuerenca_db");
 
 // Comprova si la connexió ha fallat
 if ($mysqli->connect_error) {
@@ -71,7 +71,7 @@ $mysqli->close();
        </div>
     <div class="register-container">
         <h2>Registra't</h2>
-        <form action="register.php" method="POST" class="register-form">
+        <form action="php/controlRegistre.php" method="POST" class="register-form">
             <input type="text" name="nom" placeholder="Nom" required>
             <input type="text" name="cognoms" placeholder="Cognoms" required>
             <input type="text" name="nom_dusuari" placeholder="Nom d'usuari" required>
