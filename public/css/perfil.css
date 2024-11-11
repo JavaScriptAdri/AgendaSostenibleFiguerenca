@@ -1,14 +1,14 @@
 /* Estils generals */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f0f8f4; /* Verd suau per al fons */
     color: #333;
     margin: 0;
     padding: 0;
     margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
-    
 }
 
+/* Barra superior amb llegenda ajustada */
 .top_llegenda {
     position: absolute;
     top: 0;
@@ -16,44 +16,47 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px;
+    padding: 5px 10px; /* Reduïm el padding per fer-ho més estret */
     background-color: #e8f5e9; /* Verd clar per a l’estètica ecològica */
     border-bottom: 2px solid #a5d6a7;
+    height: 50px; /* Fixa l'altura de la barra per a una millor coherència */
 }
 
-/* La imatge a la barra */
+/* Imatge a la barra superior */
 .top_llegenda img {
-    height: 40px;
+    height: 30px; /* Reduïm l'altura de la imatge per ajustar-se a la nova alçada */
     margin-right: 10px;
 }
-  
-  /* Botons del menú amb colors verds i transicions */
-.top_llegenda a button,.top_llegenda button  {
+
+/* Estils dels botons de la barra superior */
+.top_llegenda a button, .top_llegenda button {
     background-color: #66bb6a; /* Verd ecològic */
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 8px 12px; /* Reduïm el padding per fer els botons més petits */
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
-  
-  /* Efecte de pas de cursor sobre el botó */
-.top_llegenda a button:hover,.top_llegenda button:hover {
+
+/* Efecte de pas de cursor sobre els botons */
+.top_llegenda a button:hover, .top_llegenda button:hover {
     background-color: #388e3c; /* Verd més fosc al passar el cursor */
     transform: scale(1.05); /* Liger ampliació per fer-ho més interactiu */
 }
 
-/* Estils per al títol i la informació de l'usuari */
+/* Estils per al títol de la pàgina */
 h1 {
     text-align: center;
     color: #388e3c; /* Verd fosc per al títol */
     margin-top: 20px;
     font-size: 24px;
+    font-weight: 600; /* Afegeix pes al títol per destacar-lo */
 }
 
+/* Estils per al text informatiu */
 p {
     text-align: center;
     font-size: 18px;
@@ -61,7 +64,7 @@ p {
     color: #2c6e49; /* Verd més clar per al text */
 }
 
-/* Estils per la imatge de perfil */
+/* Estils per a la imatge de perfil */
 img {
     display: block;
     margin: 20px auto;
@@ -70,7 +73,7 @@ img {
     border: 5px solid #388e3c; /* Verd fosc per al bord */
 }
 
-/* Enllaç de tancament de sessió */
+/* Estils per als enllaços */
 a {
     display: block;
     text-align: center;
@@ -85,7 +88,7 @@ a:hover {
     color: #2e7d32; /* Verd més fosc en passar el cursor */
 }
 
-/* Estils per al botó d'editar */
+/* Estils per al botó d'editar perfil */
 .editar {
     display: block;
     text-align: center;
@@ -103,16 +106,56 @@ a:hover {
     background-color: #388e3c;
 }
 
+/* Estils per al formulari d'editar perfil */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #388e3c; /* Verd per a les etiquetes */
+}
+
+form input[type="text"], form input[type="email"], form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #388e3c;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .top_llegenda {
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
+        padding: 5px 10px; /* Ajustem el padding per a una millor visibilitat en pantalles petites */
     }
 
     .top_llegenda img {
-        margin-bottom: 10px;
+        margin-bottom: 5px; /* Reduïm l'espai entre la imatge i els botons */
     }
 
     .top_llegenda button {
@@ -134,6 +177,10 @@ a:hover {
 
     a {
         font-size: 16px;
+    }
+
+    form {
+        padding: 15px;
     }
 }
 

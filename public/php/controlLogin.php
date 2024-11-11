@@ -2,8 +2,9 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
 // Connexió a la base de dades
-$mysqli = new mysqli("172.19.0.2", "admin", "admin", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.20.0.3", "admin", "admin", "agenda_figuerenca_db");
 
 // Comprova si la connexió ha fallat
 if ($mysqli->connect_error) {
@@ -43,9 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $update_stmt->execute();
         $update_stmt->close();
 
-        header("Location: perfil.php");
+        // Redirecció a perfil.php amb la ruta correcta
+        header("Location: /src/views/perfil.php ");
         exit();
     } else {
         echo "Nom d'usuari o contrasenya incorrectes";
     }
 }
+?>
