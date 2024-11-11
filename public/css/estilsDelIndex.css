@@ -1,62 +1,11 @@
-.Iniciar-ocult {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000055;
-    justify-content: center;
-    align-items: center;
+body {
+  margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
 }
-.Registrar-ocult {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000055;
-    justify-content: center;
-    align-items: center;
-}
-  
-  .ocult-content {
-    background-color: #ffffff;
-    background-size: 500%;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 300px;
-  }
-  /* Estil per a la capa de fons quan es mostren els continguts "ocults" */
-.Iniciar-ocult, .Registrar-ocult {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
+
+.top_llegenda {
+  position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.55); /* Transparència */
-  justify-content: center;
-  align-items: center;
-}
-
-/* Contenidor de contingut emergent */
-.ocult-content {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estils per al menú superior amb colors verds */
-.top_llegenda {
   display: flex;
   align-items: center;
   gap: 10px;

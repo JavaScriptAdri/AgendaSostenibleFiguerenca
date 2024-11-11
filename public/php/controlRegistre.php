@@ -50,4 +50,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Tanca la connexió
 $mysqli->close();
-?>

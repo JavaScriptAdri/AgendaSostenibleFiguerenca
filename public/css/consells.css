@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
 }
 
 header {

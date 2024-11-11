@@ -7,44 +7,44 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
+    
 }
 
-/* Estils per al top de la llegenda (barra de navegació) */
 .top_llegenda {
-    background-color: #388e3c; /* Verd fosc per a la barra de navegació */
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
+    position: absolute;
     top: 0;
-    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #e8f5e9; /* Verd clar per a l’estètica ecològica */
+    border-bottom: 2px solid #a5d6a7;
 }
 
 .top_llegenda img {
-    width: 50px;
-    height: auto;
+    height: 40px;
+    margin-right: 10px;
 }
-
-.top_llegenda a {
-    text-decoration: none;
-}
-
-.top_llegenda button {
-    background-color: #ffffff;
-    border: 2px solid #388e3c; /* Verd fosc */
-    color: #388e3c;
-    padding: 10px 15px;
-    margin: 0 10px;
-    cursor: pointer;
+  
+  /* Botons del menú amb colors verds i transicions */
+.top_llegenda a button,.top_llegenda button  {
+    background-color: #66bb6a; /* Verd ecològic */
+    color: #ffffff;
+    border: none;
     border-radius: 5px;
+    padding: 10px 15px;
     font-size: 14px;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: Arial, sans-serif;
 }
-
-.top_llegenda button:hover {
-    background-color: #388e3c;
-    color: white;
+  
+  /* Efecte de pas de cursor sobre el botó */
+.top_llegenda a button:hover,.top_llegenda button:hover {
+    background-color: #388e3c; /* Verd més fosc al passar el cursor */
+    transform: scale(1.05); /* Liger ampliació per fer-ho més interactiu */
 }
 
 /* Estils per al títol i la informació de l'usuari */

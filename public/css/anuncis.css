@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
+    margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
 }
 
 header {
