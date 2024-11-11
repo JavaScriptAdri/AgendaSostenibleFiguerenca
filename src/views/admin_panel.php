@@ -84,3 +84,4 @@
     <script src="/public/js/admin_panel.js"></script>
 </body>
 </html>
+    
