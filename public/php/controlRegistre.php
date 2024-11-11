@@ -1,6 +1,6 @@
 <?php
 // Connexió a la base de dades
-$mysqli = new mysqli("172.19.0.3", "admin", "admin", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.19.0.2", "admin", "admin", "agenda_figuerenca_db");
 
 // Comprova si la connexió ha fallat
 if ($mysqli->connect_error) {
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Inicia la sessió i redirigeix a perfil.php si s'ha registrat correctament
             session_start();
             $_SESSION['usuari_id'] = $stmt->insert_id;
-            header("Location: /src/views/perfil.php");
+            header("Location: perfil.php");
             exit();
         } else {
             // Si l'execució fallida, mostra l'error
