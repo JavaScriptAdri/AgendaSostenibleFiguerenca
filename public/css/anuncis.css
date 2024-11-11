@@ -29,7 +29,7 @@ input, select, textarea {
     margin-top: 5px;
 }
 
-button {
+main button {
     margin-top: 15px;
     padding: 10px;
     background-color: #28a745;
@@ -51,4 +51,7 @@ button {
 .ad-item img {
     max-width: 100px; /* Ajusta la mida de les imatges */
     height: auto;
+}
+.top_llegenda button{
+    margin-top: 0px;
 }

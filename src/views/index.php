@@ -11,7 +11,7 @@ include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/anuncis.css">
+    <link rel="stylesheet" href="css/consells.css">
     <link rel="stylesheet" href="css/estilsDelIndex.css">
     <link rel="icon" href="imatges/IconaP2.png" type="image/png">
 </head>

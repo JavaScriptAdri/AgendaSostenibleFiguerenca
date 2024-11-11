@@ -13,6 +13,7 @@ include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
     <title>Anuncis Classificats</title>
     <link rel="stylesheet" href="css/anuncis.css">
     <link rel="stylesheet" href="css/estilsDelIndex.css">
+    <link rel="stylesheet" href="css/consells.css">
     <link rel="icon" href="imatges/IconaP2.png" type="image/png">
 </head>
 <body>
