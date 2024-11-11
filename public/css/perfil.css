@@ -1,111 +1,87 @@
+/* CSS per al perfil d'usuari amb estètica sostenible */
+
 /* Estils generals */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f8f3;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f4; /* Verd suau per al fons */
+    color: #333;
     margin: 0;
     padding: 0;
+}
+
+/* Estils per al top de la llegenda (barra de navegació) */
+.top_llegenda {
+    background-color: #388e3c; /* Verd fosc per a la barra de navegació */
+    padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
-    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.profile-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
+.top_llegenda img {
+    width: 50px;
+    height: auto;
 }
 
-.profile-header h1 {
-    color: #4CAF50;
-    font-size: 2rem;
-    text-align: center;
-}
-
-.profile-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.profile-image {
-    text-align: center;
-}
-
-.profile-image img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #4CAF50;
-    margin-bottom: 20px;
-}
-
-.edit-btn {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+.top_llegenda a {
     text-decoration: none;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
 }
 
-.edit-btn:hover {
+.top_llegenda button {
+    background-color: #ffffff;
+    border: 2px solid #388e3c; /* Verd fosc */
+    color: #388e3c;
+    padding: 10px 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.top_llegenda button:hover {
     background-color: #388e3c;
-}
-
-.profile-details {
-    text-align: left;
-    margin-top: 20px;
-}
-
-.profile-details p {
-    font-size: 1.1rem;
-    margin: 5px 0;
-}
-
-.profile-footer {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.logout-btn {
-    display: inline-block;
-    background-color: #f44336;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+}
+
+/* Estils per al títol i la informació de l'usuari */
+h1 {
+    text-align: center;
+    color: #388e3c; /* Verd fosc per al títol */
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #2c6e49; /* Verd més clar per al text */
+}
+
+/* Estils per la imatge de perfil */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 150px;
+    border-radius: 50%;
+    border: 5px solid #388e3c; /* Verd fosc per al bord */
+}
+
+/* Enllaç de tancament de sessió */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
     text-decoration: none;
+    color: #4caf50; /* Verd clar per al text de tancament */
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
 }
 
-.logout-btn:hover {
-    background-color: #e53935;
-}
-
-@media screen and (max-width: 600px) {
-    .profile-container {
-        padding: 20px;
-    }
-
-    .profile-header h1 {
-        font-size: 1.5rem;
-    }
-
-    .profile-image img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .profile-details p {
-        font-size: 1rem;
-    }
+a:hover {
+    color: #2e7d32; /* Verd més fosc en passar el cursor */
 }
