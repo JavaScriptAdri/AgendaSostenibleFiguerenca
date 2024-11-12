@@ -1,0 +1,88 @@
+/* Estilo hacker para el panel de administración */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #00ff00;
+    font-family: monospace;
+}
+
+.admin-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #1a1a1a;
+    width: 250px;
+    padding: 20px;
+    border-right: 1px solid #00ff00;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding: 15px 0;
+    cursor: pointer;
+    color: #00ff00;
+    border-bottom: 1px solid #00ff00;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.sidebar ul li:hover {
+    color: #0fa;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+button, input[type="submit"] {
+    background-color: #0f0f0f;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #00ff00;
+    color: #0f0f0f;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #00ff00;
+}
+
+input, select, textarea {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 5px;
+    width: 100%;
+}

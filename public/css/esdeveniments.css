@@ -1,0 +1,328 @@
+/* Estils globals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7fa; /* Color de fons bàsic */
+    background-image: url('path/to/your/texture.png'); /* Afegeix la teva textura aquí */
+    background-size: cover; /* Ajusta la textura per cobrir tota la pàgina */
+    overflow-y: auto; /* Permet el desplaçament vertical */
+}
+
+
+/* Efecte de fons animat */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(255, 255, 255, 0.2));
+    animation: gradientAnimation 5s ease infinite; /* Animació de degradat */
+    z-index: -1; /* Col·locar darrere del contingut */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background: rgba(76, 175, 80, 0.9); /* Fons translúcid */
+    color: #fff;
+    padding: 2em 1em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efecte de ombra */
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Contenidor principal */
+main {
+    display: grid;
+    gap: 2em;
+    padding: 2em 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Filtres */
+#filters {
+    background-color: rgba(255, 255, 255, 0.95); /* Fons translúcid */
+    border-radius: 10px;
+    padding: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease; /* Animació d'entrada */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Desplaçament cap amunt */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#filters h2 {
+    margin-bottom: 1em;
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+#filters label {
+    font-weight: bold;
+    margin-top: 0.5em;
+    display: block;
+    color: #555;
+}
+
+#filters input,
+#filters select {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+#filters input:focus,
+#filters select:focus {
+    border: 1px solid #4CAF50; /* Canvia el color del bord en enfocar */
+}
+
+#apply_filters {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.8em;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; /* Efecte de creixement */
+}
+
+#apply_filters:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Augmenta lleugerament */
+}
+
+/* Llistat d'Esdeveniments */
+#events_list h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+#events_container {
+    display: grid;
+    gap: 1.5em;
+}
+
+/* Targetes d'Esdeveniments */
+.event-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: scaleUp 0.5s ease; /* Animació d'entrada */
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9); /* Comença reduït */
+        opacity: 0; /* Comença invisible */
+    }
+    to {
+        transform: scale(1); /* Escala a la mida normal */
+        opacity: 1; /* Es fa visible */
+    }
+}
+
+.event-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f0faf0;
+}
+
+/* Efecte per a una lleugera animació a l'hover */
+.event-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(76, 175, 80, 0.15);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.event-card:hover::before {
+    transform: rotate(0deg);
+    top: 0;
+    left: 0;
+}
+
+/* Ajust de text dins de la targeta */
+.event-card h3,
+.event-card p,
+.event-card .event-details {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animació de desplaçament de text */
+.event-card h3 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover h3 {
+    transform: translateY(-3px);
+}
+
+.event-card p,
+.event-card .event-details {
+    font-size: 1rem;
+    color: #666;
+    transition: color 0.3s ease, transform 0.3s ease; /* Animació de color i desplaçament */
+}
+
+.event-card:hover p,
+.event-card:hover .event-details {
+    color: #333;
+    transform: translateY(3px); /* Desplaçament cap avall */
+}
+
+/* Mapa Leaflet */
+#map {
+    margin-top: 2em;
+}
+
+#mapid {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animació de moviment al mapa */
+#mapid {
+    animation: mapWave 10s ease-in-out infinite; /* Animació de moviment */
+}
+
+@keyframes mapWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Moviment cap amunt */
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: rgba(76, 175, 80, 0.9); /* Fons translúcid */
+    color: #fff;
+    padding: 1.5em;
+    margin-top: 2em;
+    font-size: 1rem;
+    animation: fadeIn 1s ease; /* Animació d'entrada */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Adaptació mòbil */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1em;
+        grid-template-columns: 1fr;
+    }
+
+    #apply_filters {
+        padding: 0.8em;
+    }
+}
+
+/* Avis de Cookies */
+#cookie-notice {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.9); /* Fons translúcid */
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease; /* Animació d'entrada */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+}
+}
+
+/* Botó de tancament */
+#cookie-notice button {
+    background: transparent;
+    color: #4CAF50;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 1em;
+    transition: color 0.3s ease;
+}
+
+#cookie-notice button:hover {
+    color: #fff;
+}
