@@ -1,33 +1,107 @@
-.Iniciar-ocult {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000055;
-    justify-content: center;
-    align-items: center;
+body {
+  margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
 }
-.Registrar-ocult {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000055;
-    justify-content: center;
-    align-items: center;
+
+.top_llegenda {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #e8f5e9; /* Verd clar per a l’estètica ecològica */
+  border-bottom: 2px solid #a5d6a7;
 }
-  
-  .ocult-content {
-    background-color: #ffffff;
-    background-size: 500%;
-    padding: 20px;
+
+.top_llegenda img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Botons del menú amb colors verds i transicions */
+.top_llegenda a button,.top_llegenda button  {
+  background-color: #66bb6a; /* Verd ecològic */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-family: Arial, sans-serif;
+}
+
+/* Efecte de pas de cursor sobre el botó */
+.top_llegenda a button:hover,.top_llegenda button:hover {
+  background-color: #388e3c; /* Verd més fosc al passar el cursor */
+  transform: scale(1.05); /* Liger ampliació per fer-ho més interactiu */
+}
+
+/* Millora de l’estil de botons específics per donar més coherència visual */
+.Home {
+  background-color: #81c784;
+}
+
+.Anuncis {
+  background-color: #66bb6a;
+}
+
+.Consells {
+  background-color: #4caf50;
+}
+
+.EsdevenimentsBuscador {
+  background-color: #388e3c;
+}
+
+/* Afegim una transició suau per quan els botons canvien d'estat */
+.top_llegenda a button:focus,.top_llegenda button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 3px rgba(102, 187, 106, 0.5);
+}
+
+.Esdeveniment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #00ff6255;
+    padding: 15px;
     border-radius: 10px;
-    text-align: center;
-    width: 300px;
-  }
+    max-width: 600px;
+}
+
+.Esdeveniment img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    float: left;
+}
+
+.EsdevenimentInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el text a l'esquerra */
+    justify-content: center; /* Centra el text verticalment amb la imatge */
+}
+
+.Titol {
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.Descripcio {
+    margin: 5px 0 10px;
+    color: #555;
+}
+
+
+.EsdevenimentsSaverMes {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.EsdevenimentsSaverMes:hover {
+    text-decoration: underline;
+}

@@ -1,31 +1,18 @@
-document.getElementById('ad_form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// Funció de filtratge dels anuncis segons la cerca i la categoria seleccionada
+function filterAnuncios() {
+    let searchInput = document.getElementById('searchInput').value.toLowerCase();
+    let categoryFilter = document.getElementById('categoryFilter').value;
+    let announcements = document.querySelectorAll('.announcement-card');
 
-    const title = document.getElementById('title').value;
-    const description = document.getElementById('description').value;
-    const images = document.getElementById('images').files;
-    const category = document.getElementById('category').value;
-    const status = document.getElementById('status').value;
+    announcements.forEach(announcement => {
+        let title = announcement.querySelector('h3').textContent.toLowerCase();
+        let description = announcement.querySelector('p').textContent.toLowerCase();
+        let category = announcement.dataset.category.toLowerCase();
 
-    const adItem = document.createElement('div');
-    adItem.classList.add('ad-item');
-    
-    const imgElements = Array.from(images).map(file => {
-        const img = document.createElement('img');
-        img.src = URL.createObjectURL(file); // Generar URL temporal per a la imatge
-        return img;
+        if (title.includes(searchInput) && (categoryFilter === '' || category === categoryFilter)) {
+            announcement.style.display = 'block';
+        } else {
+            announcement.style.display = 'none';
+        }
     });
-
-    adItem.innerHTML = `
-        <h3>${title}</h3>
-        <p>${description}</p>
-        <div>${imgElements.map(img => img.outerHTML).join('')}</div>
-        <p>Categoria: ${category}</p>
-        <p>Estat: ${status}</p>
-    `;
-
-    document.getElementById('ads').appendChild(adItem);
-
-    // Reiniciar formulari
-    document.getElementById('ad_form').reset();
-});
+}

@@ -1,0 +1,179 @@
+/* Estils Generals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9f9f1; /* Fondo verde claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
+}
+
+
+.register-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    transform: scale(0.9);
+    animation: bounceIn 1s forwards;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #3d723d; /* Color de texto verde */
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #78c1a4;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #f1f9f5; /* Fondo claro */
+    color: #3d723d; /* Texto verde */
+    transition: border 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    background-color: #eaf8e2; /* Fondo cuando se selecciona el campo */
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+button {
+    padding: 12px;
+    background-color: #4CAF50; /* Verde brillante */
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .register-container {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+}
+/* Estils per al menú superior amb colors verds */
+.top_llegenda {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #e8f5e9; /* Verd clar per a l’estètica ecològica */
+    border-bottom: 2px solid #a5d6a7;
+}
+
+.top_llegenda img {
+    height: 40px;
+    margin-right: 10px;
+}
+  
+  /* Botons del menú amb colors verds i transicions */
+.top_llegenda a button,.top_llegenda button  {
+    background-color: #66bb6a; /* Verd ecològic */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: Arial, sans-serif;
+}
+  
+  /* Efecte de pas de cursor sobre el botó */
+.top_llegenda a button:hover,.top_llegenda button:hover {
+    background-color: #388e3c; /* Verd més fosc al passar el cursor */
+    transform: scale(1.05); /* Liger ampliació per fer-ho més interactiu */
+}

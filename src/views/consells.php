@@ -10,9 +10,9 @@ include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/anuncis.css">
+    <title>Consells</title>
     <link rel="stylesheet" href="css/estilsDelIndex.css">
+    <link rel="stylesheet" href="css/consells.css">
     <link rel="icon" href="imatges/IconaP2.png" type="image/png">
 </head>
 <body>
@@ -27,12 +27,7 @@ include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
        </div>
 
         <div class="Titul_principal">
-            <h1 title="Titol principal">Agenda Sostenible Figuerenca</h1>
-        </div>
-        <div class="llistatEsdeveniments">
-            <ul>
-                <?php include 'php/llistatEsdeveniments.php';?>
-            </ul>
+            <h1 title="Titol principal">Consells</h1>
         </div>
     <script>
       // Assigna el nom de l'usuari a una variable JavaScript

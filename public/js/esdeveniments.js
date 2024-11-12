@@ -5,25 +5,7 @@ $(document).ready(function() {
         maxZoom: 19,
     }).addTo(map);
 
-    // Funció per carregar els esdeveniments
-    function carregarEsdeveniments(filters = {}) {
-        $.ajax({
-            url: 'get_esdeveniments.php',
-            type: 'GET',
-            data: filters,
-            success: function(data) {
-                $('#events_container').html(data);
-                // Actualitza el mapa amb els nous esdeveniments
-                JSON.parse(data).forEach(event => {
-                    L.marker([event.latitud, event.longitud]).addTo(map)
-                        .bindPopup(`<b>${event.titol}</b><br>${event.descripcio}`);
-                });
-            }
-        });
-    }
-
-    // Carrega inicial dels esdeveniments
-    carregarEsdeveniments();
+  
 
     // Aplica els filtres quan es fa clic al botó
     $('#apply_filters').click(function() {
