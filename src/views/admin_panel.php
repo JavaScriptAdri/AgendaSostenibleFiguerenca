@@ -1,3 +1,73 @@
+<?php
+// Connexió a la base de dades
+$servername = "localhost";
+$username = "usuari";
+$password = "contrasenya";
+$dbname = "base_dades";
+
+$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
+
+// Altres codi anterior
+
+if (isset($_POST['action']) && $_POST['action'] === 'get_stats') {
+    $stats = [
+        'total_events' => getTotalEvents(),
+        'total_comments' => getTotalComments(),
+        'total_users' => getTotalUsers(),
+        'total_tips' => getTotalTips()
+    ];
+    echo json_encode($stats);
+}
+
+// Funcions per obtenir les estadístiques
+function getTotalEvents() {
+    // Codi per comptar els esdeveniments
+    return 120; // Exemple de nombre total
+}
+
+function getTotalComments() {
+    // Codi per comptar els comentaris
+    return 450; // Exemple de nombre total
+}
+
+function getTotalUsers() {
+    // Codi per comptar els usuaris
+    return 230; // Exemple de nombre total
+}
+
+function getTotalTips() {
+    // Codi per comptar els consells
+    return 50; // Exemple de nombre total
+}
+
+// Funcions CRUD per diferents mòduls
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    $action = $_POST['action'];
+    
+    // CRUD per Esdeveniments
+    if ($action === 'create_event') {
+        $titol = $_POST['titol'];
+        $descripcio = $_POST['descripcio'];
+        $data = $_POST['data'];
+        $stmt = $mysqli->prepare("INSERT INTO esdeveniments (titol, descripcio, data) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $titol, $descripcio, $data);
+        $stmt->execute();
+        echo "Esdeveniment creat!";
+    } elseif ($action === 'delete_event') {
+        $id = $_POST['id'];
+        $stmt = $mysqli->prepare("DELETE FROM esdeveniments WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        echo "Esdeveniment eliminat!";
+    }
+
+    // Aquí segueixen les altres accions CRUD
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -5,10 +75,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panell d'Administració - Esdeveniments Sostenibles</title>
     <link rel="stylesheet" href="/public/css/admin_panel.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    
     <div class="admin-container">
-        <!-- Barra lateral de navegació -->
         <nav class="sidebar">
             <div class="logo">
                 <img src="../../public/imatges/logo.png" alt="Logo" class="admin-logo">
@@ -26,62 +97,26 @@
             </ul>
         </nav>
 
-        <!-- Contingut principal -->
         <main class="content">
-            <header class="admin-header">
-                <h1>Panell d'Administració</h1>
-            </header>
+    <header class="admin-header">
+        <h1>Panell d'Administració</h1>
+    </header>
+    <section id="dashboard" class="admin-section">
+        <h2>Dashboard</h2> <!-- Canviat de h3 a h2 -->
+        <p>Benvingut al panell d'administració. Selecciona una secció de la barra lateral per gestionar el contingut.</p>
+    </section>
 
-            <section id="dashboard" class="admin-section">
-                <h3>Dashboard</h3>
-                <p>Benvingut al panell d'administració. Selecciona una secció de la barra lateral per gestionar el contingut.</p>
-            </section>
+    <!-- Sección de gestión de eventos, comentarios, etc. -->
+</main>
 
-            <!-- Seccions dinàmiques -->
-            <section id="event-management" class="admin-section hidden">
-                <h2>Gestió d'Esdeveniments</h2>
-                <button class="btn-primary" onclick="createEvent()">Crear Esdeveniment</button>
-                <div id="events-list"></div>
-            </section>
 
-            <section id="comment-management" class="admin-section hidden">
-                <h2>Gestió de Comentaris</h2>
-                <div id="comments-list"></div>
-            </section>
-
-            <section id="user-management" class="admin-section hidden">
-                <h2>Gestió d'Usuaris</h2>
-                <button class="btn-primary" onclick="createUser()">Crear Usuari</button>
-                <div id="users-list"></div>
-            </section>
-
-            <section id="tips-management" class="admin-section hidden">
-                <h2>Gestió de Consells Sostenibles</h2>
-                <button class="btn-primary" onclick="createTip()">Crear Consell</button>
-                <div id="tips-list"></div>
-            </section>
-
-            <section id="category-management" class="admin-section hidden">
-                <h2>Gestió de Categories</h2>
-                <button class="btn-primary" onclick="createCategory()">Crear Categoria</button>
-                <div id="categories-list"></div>
-            </section>
-
-            <section id="classified-ads-management" class="admin-section hidden">
-                <h2>Gestió d'Anuncis Classificats</h2>
-                <button class="btn-primary" onclick="createClassified()">Crear Anunci</button>
-                <div id="classifieds-list"></div>
-            </section>
-
-            <section id="classified-category-management" class="admin-section hidden">
-                <h2>Gestió de Categories d'Anuncis</h2>
-                <button class="btn-primary" onclick="createClassifiedCategory()">Crear Categoria d'Anunci</button>
-                <div id="classified-categories-list"></div>
-            </section>
+            <!-- Sección de gestión de eventos, comentarios, etc. -->
         </main>
     </div>
 
-    <script src="/public/js/admin_panel.js"></script>
+    <script src="../../public/js/admin_panel.js"></script>
+
+
 </body>
 </html>
-    
+

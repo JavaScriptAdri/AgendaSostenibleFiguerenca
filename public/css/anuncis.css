@@ -1,54 +1,88 @@
-body {
-    font-family: Arial, sans-serif;
+/* Estilo hacker para el panel de administración */
+* {
     margin: 0;
-    padding: 0px;
-    margin-top: 60px; /* Ajusta segons l'altura de la llegenda */
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #f4f4f4;
-    padding: 10px;
-    text-align: center;
+body {
+    background-color: #0f0f0f;
+    color: #00ff00;
+    font-family: monospace;
 }
 
-section {
-    margin-top: 20px;
-}
-
-form {
+.admin-container {
     display: flex;
-    flex-direction: column;
+    height: 100vh;
 }
 
-label {
-    margin-top: 10px;
+.sidebar {
+    background-color: #1a1a1a;
+    width: 250px;
+    padding: 20px;
+    border-right: 1px solid #00ff00;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding: 15px 0;
+    cursor: pointer;
+    color: #00ff00;
+    border-bottom: 1px solid #00ff00;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.sidebar ul li:hover {
+    color: #0fa;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+button, input[type="submit"] {
+    background-color: #0f0f0f;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #00ff00;
+    color: #0f0f0f;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #00ff00;
 }
 
 input, select, textarea {
-    padding: 10px;
-    margin-top: 5px;
-}
-
-button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-#ad_list {
-    margin-top: 20px;
-}
-
-.ad-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-.ad-item img {
-    max-width: 100px; /* Ajusta la mida de les imatges */
-    height: auto;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 5px;
+    width: 100%;
 }

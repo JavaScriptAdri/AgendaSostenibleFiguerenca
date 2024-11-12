@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_FILES['images'])) {
         foreach ($_FILES['images']['tmp_name'] as $key => $tmp_name) {
             $file_name = basename($_FILES['images']['name'][$key]);
-            $file_path = 'uploads/' . $file_name; // Directori on emmagatzemar les imatges
+            $file_path = '..//uploads' . $file_name; // Directori on emmagatzemar les imatges
 
             // Comprovar si la imatge és vàlida i moure-la
             if (move_uploaded_file($tmp_name, $file_path)) {

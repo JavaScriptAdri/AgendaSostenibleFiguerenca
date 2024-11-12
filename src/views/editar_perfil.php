@@ -2,7 +2,7 @@
 session_start();
 
 // Connexió a la base de dades
-$mysqli = new mysqli("172.20.0.3", "admin", "admin", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
 
 // Comprova si la connexió ha fallat
 if ($mysqli->connect_error) {
