@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 include('../../public/php/controlLogin.php');
 
 // Connexió a la base de dades
-$mysqli = new mysqli("172.20.0.2", "admin", "admin", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.19.0.2", "admin", "admin", "agenda_figuerenca_db");
 
 // Comprova si la connexió ha fallat
 if ($mysqli->connect_error) {

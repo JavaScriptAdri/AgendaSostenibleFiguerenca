@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("172.20.0.2", username: "admin", "admin", "agenda_figuerenca_db");
+$mysqli = new mysqli("172.19.0.2", username: "admin", password:"admin", database:"agenda_figuerenca_db");
 
 
 // Comprova si la connexió ha fallat
