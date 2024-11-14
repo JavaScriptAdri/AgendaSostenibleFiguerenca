@@ -24,8 +24,8 @@ CREATE TABLE categories (
 CREATE TABLE esdeveniments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titol VARCHAR(255) NOT NULL,
-    latitud DECIMAL(9, 6) NOT NULL,
-    longitud DECIMAL(9, 6) NOT NULL,
+    latitud DECIMAL(11, 8) NOT NULL,
+    longitud DECIMAL(11, 8) NOT NULL,
     descripcio TEXT NOT NULL,
     imatges JSON,
     tipus ENUM('Interior', 'Aire lliure', 'Xerrada', 'Jornada') NOT NULL,

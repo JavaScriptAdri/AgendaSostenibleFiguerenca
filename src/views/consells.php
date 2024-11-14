@@ -4,6 +4,10 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 include 'php/cookiePerDefecte.php'; // Inclou el fitxer que crea la cookie per defecte
 include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
+
+// Inclou el controlador o arxiu que carrega els consells
+include 'php/llistar_consells.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,6 +33,28 @@ include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
         <div class="Titul_principal">
             <h1 title="Titol principal">Consells</h1>
         </div>
+
+    <h2>Llistat de Consells</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Títol</th>
+                <th>Descripció Breu</th>
+                <th>Text Explicatiu</th>
+                <th>Etiquetes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($consells as $consell): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($consell['titol']); ?></td>
+                <td><?php echo htmlspecialchars($consell['descripcio_breu']); ?></td>
+                <td><?php echo htmlspecialchars($consell['text_explicatiu']); ?></td>
+                <td><?php echo htmlspecialchars(implode(', ', json_decode($consell['etiquetes']))); ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
     <script>
       // Assigna el nom de l'usuari a una variable JavaScript
       var usuari = <?php echo isset($_SESSION['usuari']) ? json_encode($_SESSION['usuari']) : 'null'; ?>;

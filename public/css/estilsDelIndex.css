@@ -61,47 +61,40 @@ body {
   box-shadow: 0 0 5px 3px rgba(102, 187, 106, 0.5);
 }
 
-.Esdeveniment {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    background-color: #00ff6255;
-    padding: 15px;
-    border-radius: 10px;
-    max-width: 600px;
+.esdeveniment {
+  display: flex;
+  align-items: center;
+  background-color: #b2f5bc;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 5px;
 }
 
-.Esdeveniment img {
-    width: 80px;
-    height: auto;
-    margin-right: 15px;
-    float: left;
+.esdeveniment img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
 }
 
-.EsdevenimentInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinea el text a l'esquerra */
-    justify-content: center; /* Centra el text verticalment amb la imatge */
+.esdeveniment_detalls {
+  flex-grow: 1;
 }
 
-.Titol {
-    font-weight: bold;
-    margin: 0;
-    font-size: 1.2em;
+.esdeveniment h3 {
+  font-weight: bold;
+  margin: 0;
 }
 
-.Descripcio {
-    margin: 5px 0 10px;
-    color: #555;
+.esdeveniment p {
+  margin: 5px 0;
 }
 
-
-.EsdevenimentsSaverMes {
-    color: #007bff;
-    text-decoration: none;
+.saber_mes {
+  color: #007bff;
+  text-decoration: none;
 }
 
-.EsdevenimentsSaverMes:hover {
-    text-decoration: underline;
+.saber_mes:hover {
+  text-decoration: underline;
 }
+

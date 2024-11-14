@@ -1,5 +1,5 @@
 <?php
-include 'php/controlLogin.php';
+include '../connexio.php'; // Inclou el fitxer de connexió a la base de dades
 ?>
 
 <!DOCTYPE html>
